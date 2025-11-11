@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.25.0)
 
-project(chi)
+project(pon)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -14,6 +14,8 @@ add_executable(
   ${PROJECT_NAME}
   ${SOURCES}
 )
+
+find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
 
 target_compile_features(
   ${PROJECT_NAME}
@@ -30,6 +32,7 @@ target_include_directories(
 target_link_libraries(
   ${PROJECT_NAME}
   PRIVATE
+  SDL3::SDL3
 )
 
 target_compile_options(
